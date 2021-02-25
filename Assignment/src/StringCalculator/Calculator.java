@@ -3,6 +3,7 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class Calculator {
+	//https://blog.andreafrancia.it
 	static int i = 1;
 	@Test
 	public void emptyString() {
@@ -27,5 +28,9 @@ public class Calculator {
 	@Test
 	public void allowNewLine() {
 		assertEquals(6,StringCalculator.add("1,2\n3"));
+	}
+	@Test 
+	public void delimeterChange() {
+		assertEquals(3,StringCalculator.add("//,\n1,2"));
 	}
 }
