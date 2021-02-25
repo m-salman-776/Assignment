@@ -12,10 +12,26 @@ public class StringCalculator {
 		else {
 			int sum = 0;
 			ArrayList<Integer> numbers = getNumbers(input);
+			ArrayList<Integer> negatives = new ArrayList<Integer>();
+			for(Integer a : numbers) if(a < 0) negatives.add(a);
+			if(negatives.size()>0) 
+			{
+				String res = "Negatives are not allowed " + join(negatives);
+				System.out.println(res);
+				throw new RuntimeException(res);
+			}
 			for(Integer num : numbers)
 				sum += num;
-			return sum;
+		return sum;
 		}
+	}
+	private static String join(ArrayList<Integer> negatives) {
+		StringBuilder res = new StringBuilder();
+		int size = negatives.size();
+		for(int i=0;i<size-1;i++) 
+			res.append(negatives.get(i) + " ");
+		res.append(negatives.get(size-1));
+		return res.toString();
 	}
 	private static int stoi(String input) {
 		return Integer.parseInt(input);
