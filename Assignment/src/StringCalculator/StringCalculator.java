@@ -18,7 +18,8 @@ public class StringCalculator {
 			int sum = 0;
 			ArrayList<Integer> numbers = getNumbers(input);
 			ArrayList<Integer> negatives = new ArrayList<Integer>();
-			for(Integer a : numbers) if(a < 0) negatives.add(a);
+			for(Integer a : numbers) 
+				if(a < 0) negatives.add(a);
 			if(negatives.size()>0) 
 			{
 				String res = "Negatives are not allowed " + join(negatives);

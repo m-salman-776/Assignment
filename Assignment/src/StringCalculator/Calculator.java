@@ -3,8 +3,6 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class Calculator {
-	//https://blog.andreafrancia.it
-	static int i = 1;
 	@Test
 	public void emptyString() {
 		assertEquals(0,StringCalculator.add(""));
