@@ -5,7 +5,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringCalculator {
+	public static int addMethodCallCount = 0;
+	public static int GetCalledCount() {
+		return addMethodCallCount;
+	}
 	public static int add(String input) {
+		addMethodCallCount += 1;
 		if(input.isEmpty()) {
 			return 0;
 		}
@@ -21,6 +26,7 @@ public class StringCalculator {
 				throw new RuntimeException(res);
 			}
 			for(Integer num : numbers)
+				if(num <= 1000)
 				sum += num;
 		return sum;
 		}

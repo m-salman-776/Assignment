@@ -45,4 +45,10 @@ public class Calculator {
 			assertEquals("Negatives are not allowed -1 -2 -3",e.getMessage());
 		}
 	}
+	@Test
+	public void getAddCallCount() {
+		int a = StringCalculator.GetCalledCount();
+		System.out.print(a);
+		assertEquals(5,a);
+	}
 }
